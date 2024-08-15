@@ -10,11 +10,11 @@ const inputFulfilled = document.querySelector('[value="fulfilled"]');
 const inputRejected = document.querySelector('[value="rejected"]');
 const submitBtn = document.querySelector('[type="submit"]');
 
-console.log(formEl);
-console.log(inputDelay);
-console.log(inputFulfilled);
-console.log(inputRejected);
-console.log(submitBtn);
+// console.log(formEl);
+// console.log(inputDelay);
+// console.log(inputFulfilled);
+// console.log(inputRejected);
+// console.log(submitBtn);
 
 // Створюємо функцію
 const onSubmit = event => {
@@ -31,18 +31,8 @@ const onSubmit = event => {
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (isFulfilled) {
-        // console.log(`✅ Fulfilled promise in ${delay}ms`);
-        // Заміна  window.alert() на  бібліотеку iziToast
-        iziToast.show({
-          message: '✅ Fulfilled promise in ${delay}ms',
-        });
         resolve(delay);
       } else {
-        // console.log(`❌ Rejected promise in ${delay}ms`);
-        // Заміна  window.alert() на  бібліотеку iziToast
-        iziToast.show({
-          message: '❌ Rejected promise in ${delay}ms',
-        });
         reject(delay);
       }
     }, delay);
@@ -53,14 +43,14 @@ const onSubmit = event => {
       // console.log(`✅ Fulfilled promise in ${delay}ms`);
       // Заміна  window.alert() на  бібліотеку iziToast
       iziToast.show({
-        message: '✅ Fulfilled promise in ${delay}ms',
+        message: `✅ Fulfilled promise in ${delay} ms`,
       });
     })
     .catch(delay => {
       // console.log(`❌ Rejected promise in ${delay}ms`);
       // Заміна  window.alert() на  бібліотеку iziToast
       iziToast.show({
-        message: '❌ Rejected promise in ${delay}ms',
+        message: `❌ Rejected promise in ${delay} ms`,
       });
     });
 };
